@@ -27,7 +27,7 @@ markup_menu_5_1 = types.ReplyKeyboardMarkup(row_width=1)
 markup_menu_6 = types.ReplyKeyboardMarkup(row_width=1)
 markup_menu_7 = types.ReplyKeyboardMarkup(row_width=1)
 markup_menu_7_1 = types.ReplyKeyboardMarkup(row_width=1)
-
+#sdfsdfsdfasd
 ## Buttons
 btn_statistics = types.KeyboardButton('Cтатистика')
 btn_otchet = types.KeyboardButton('Отчет')
