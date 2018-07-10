@@ -1,0 +1,17 @@
+[Unit]
+Description=Telegram bot with anomaly notification
+
+[Service]
+Type=simple
+WorkingDirectory=/home/user/Documents/SprintML+Telegram
+
+ExecStart=/home/user/Documents/SprintML+Telegram/telegram.sh start
+RemainAfterExit=true
+ExecStop=/home/user/Documents/SprintML+Telegram/telegram.sh stop
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+

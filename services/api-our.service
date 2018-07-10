@@ -1,0 +1,15 @@
+[Unit]
+Description=Api service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/user/Documents/SprintML+Telegram
+
+ExecStart=/home/user/Documents/SprintML+Telegram/api.sh start
+RemainAfterExit=true
+ExecStop=/home/user/Documents/SprintML+Telegram/api.sh stop
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
