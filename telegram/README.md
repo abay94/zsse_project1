@@ -29,29 +29,27 @@
 ### Telegram_bot_final.py
 Класс telebot инкапсулирует все вызовы API в одном классе. Он предоставляет такие функции, как send_xyz (send_message, send_document и т. Д.)
 Если кратко пройтись по коду, то начинаем с декларацией telebot класса. 
-______________________
+``` 
 token = "***************************"
 
 bot = telebot.TeleBot(token, threaded=False)
-______________________
+``` 
 
 После этой декларации нам нужно зарегистрировать некоторые так называемые обработчики сообщений. Обработчики сообщений определяют фильтры, которые должны пройти сообщение. Если сообщение передает фильтр, вызывается декорированная функция и входящее сообщение передается в качестве аргумента. 
-______________________
+``` 
 @bot.message_handler(commands=["start"])
 def keyboard (message):
    cid = message.chat.id
    user_step[cid] = 1
     bot.send_message(message.chat.id, "Выберите действие",reply_markup=markup_menu_1)
-______________________
+``` 
 
 В конце, функция отправляет сообщение и меню из кнопок клиенту, которые инициализированы в начале. 
-______________________
+``` 
 markup_menu_1 = types.ReplyKeyboardMarkup(row_width=1)
 btn_ks_karaozek_2 = types.KeyboardButton('КС Караозек')
 btn_nazad_to_1 = types.KeyboardButton('Назад')
-
-
 markup_menu_1.add(btn_statistics, btn_otchet, btn_anomalii)
-______________________
+``` 
 
 
