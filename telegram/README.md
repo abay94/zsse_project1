@@ -5,11 +5,17 @@
 
 Все питон скрипты запускаются через командную линию (Linux distibutive, Mac OS):
 
-### ./telegram.sh start
+``` 
+./telegram.sh start
+```
 останавливают:
-### ./telegram.sh stop
+```
+./telegram.sh stop
+```
 перезапускуют:
-### ./telegram.sh restart
+``` 
+./telegram.sh restart 
+```
 
 ## Все три команды контролируются в systemd сервисе, название которое telegram-our.service.  
 
@@ -17,8 +23,8 @@
 
 ![alt text](https://image.ibb.co/jjBD1o/telega_git.jpg)
 
-Здесь показаны все взаимодействие между скриптами. Telegram client - это пользователь, который подписался на телеграм бот. Пользователь напрямую отправляет сообщения на сервер телеграмм, который ждет команды. Telegram bot отправляет на flask веб сервер, идентификатор пользователя, когда пользователь подписывается на telegram bot и подписывается на аномальное уведомление. Скрипты для обнаружения аномалий проверяют каждые 10 секунд, по базе данных Influxdb/OnlineClassification/unit/*_anomaly_status независимо от того, происходит ли аномалия в одном из параметров или нет и отправляет запрос на веб-сервер flask для отправки уведомления об аномалии пользователю, если возникает аномалия.
-В базу данных Influxdb/OnlineClassification/unit/*_anomaly_status записывает питон скрипт [anomaly_detection_metric.py](zsse_project1/metric/anomaly_detection_metric.py) который находится в папке metric.
+Здесь показаны все взаимодействие между скриптами. Telegram client - это пользователь, который подписался на телеграм бот. Пользователь напрямую отправляет сообщения на сервер телеграмм, который ждет команды. Telegram bot отправляет на flask веб сервер, идентификатор пользователя, когда пользователь подписывается на telegram bot и подписывается на аномальное уведомление. Скрипты для обнаружения аномалий проверяют каждые 10 секунд, по базе данных Influxdb/OnlineClassification/unit/-----_anomaly_status независимо от того, происходит ли аномалия в одном из параметров или нет и отправляет запрос на веб-сервер flask для отправки уведомления об аномалии пользователю, если возникает аномалия.
+В базу данных Influxdb/OnlineClassification/unit/----_anomaly_status записывает питон скрипт [anomaly_detection_metric.py](zsse_project1/metric/anomaly_detection_metric.py) который находится в папке metric.
 
 ## Telegram_bot_final.py
 Класс telebot инкапсулирует все вызовы API в одном классе. Он предоставляет такие функции, как send_xyz (send_message, send_document и т. Д.)
