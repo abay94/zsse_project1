@@ -6,10 +6,10 @@ systemd - это набор программного обеспечения, к�
 
 В нашем проекте мы разделили на четыре группы : 
 ```
-api service
-metric service
-flask service
-telegram service
+api-our.service
+metric-our.service
+flask-our.service
+telegram-our.service
 ```
 Каждый из которых запускают bash скрипты: api.sh, metric.sh, flask.sh, telegram.sh
 
