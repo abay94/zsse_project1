@@ -12,7 +12,7 @@ import datetime
 
 
 
-token = "743441656:AAGD_e5cy3OoYYY-g1jEjkdmHunNiXeYwS8"
+token = "***********************"
 
 bot = telebot.TeleBot(token, threaded=False)
 
@@ -150,7 +150,6 @@ def main_menu(message):
 
     ## Get connect to DB
     client = InfluxDBClient('extinflux.zeinetsse.com', 8086, 'test', '12345', 'labview')
-    string_name = "ow5:name_discription"
     rs5 = client.query("SELECT last(\"ow5:name_discription\"), last(\"ow5:kpi\"), last(\"ow5:state_index_text\"), last(\"ow5:availability\")  FROM labview.autogen.ow_kpi WHERE time > now() - 10m;")
     data5 = list(rs5.get_points())
     try:
