@@ -10,7 +10,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-bot_token = "743441656:AAGD_e5cy3OoYYY-g1jEjkdmHunNiXeYwS8"
+bot_token = "*********"
 list_of_users_subscribed = list()
 list_of_all_users = list()
 
