@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  flaskserver:
+    restart: always
+    build: flask/.
+    ports:
+      - 5001:5001
+
+
+  detector:
+    restart: always
+    build: detector/.
+  
+
+  telegrambot:
+    restart: always
+    build: telegrambot/.
+   
+
